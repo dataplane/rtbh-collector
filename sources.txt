@@ -35,6 +35,7 @@ BGP Community Values for RTBH:
 AT&T 7018:86
 GTT / TiNet 	3257:2666
 Hurricane Electric 	6939:666
+  telnet route-server.he.net - show bgp community 6939:666
 Level3 	3356:9999
 MTS Allstream 	15290:9999
 Qwest 	209:2
