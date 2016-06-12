@@ -33,17 +33,18 @@ KPN AS 286
     
 BGP Community Values for RTBH:
 AT&T 7018:86
-GTT / TiNet 	3257:2666
+GTT / TiNet 	3257:2666 - from route-views.routeviews.org - show bgp all community 3257:2666
 Hurricane Electric 	6939:666
   telnet route-server.he.net - show bgp community 6939:666
-Level3 	3356:9999
+  from route-views.routeviews.org - show bgp all community 6939:666
+Level3 	3356:9999  - from route-views.routeviews.org - show bgp all community 3356:9999
 MTS Allstream 	15290:9999
 Qwest 	209:2
 Sprint 	1239:66
 Verizon / MCI 	701:9999
 Comcast 7922:666 
 i3d.net 49544:666
-XO 2828:1650
+XO 2828:1650 - from route-views.routeviews.org - show bgp all community 2828:1650
 Zayo 6461:5990
 Hibernia 
  5580:663 - 100 km radius
