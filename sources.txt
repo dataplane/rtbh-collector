@@ -54,8 +54,4 @@ Hibernia
  5580:662 - 2500 km radius
  5580:665 - outside metro
  5580:666 - discard anywhere
-Verizon 701:9999
-C&W 1273:666
-
-
-
+C&W 1273:666 - from route-views.routeviews.org show bgp all community 1273:666
