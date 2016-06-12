@@ -1,0 +1,31 @@
+DE-CIX 2016-05-11
+  Blackholing Support is currently available at DE-CIX Frankfurt and DE-CIX New York
+   doc: <https://www.de-cix.net/products-services/de-cix-frankfurt/blackholing/>
+    lg:  <https://lg.de-cix.net/>, <https://lg.nyc.de-cix.net/>
+  BNv4: 80.81.193.66
+  BNv6: 2001:7f8::1a27:66:95 
+ notes: doesn't appear to be actively used in nyc
+
+MSK-IX
+   doc: <http://www.msk-ix.ru/eng/routeserver.html#blackhole>
+    lg: <http://www.msk-ix.ru/eng/lookingglass.html>
+  file: http://www.msk-ix.ru/download/lg/msk_ipv4.txt.gz
+  BNv4: 195.208.208.6
+ notes: doesn't seem to be a way to publicly obtain the rtbh routes through the lg
+        msk_ipv4.txt.gz is updated daily, parse that for BNv4 address in next-hop
+
+NetIX
+   doc: <http://www.netix.net/services/14/NetIX-Blackholing>
+    lg: <http://lg.netix.net/>
+  BNv4: 193.218.0.99 
+  BNv6: 2001:67c:29f0::9999
+ community: 65499:999
+ notes: must use the community, rs2 (vs rs1) currently has some blackhole routes
+ code:  rs=rs2-nix, cmd=show ip bgp community, prefix=65499:999
+
+look for rtbh communities and associated looking glasses for various nets
+
+KPN AS 286
+  https://as286.net/
+  telnet route-server.eurorings.net # id: rs pw: loveAS286
+    show route community 286:66
