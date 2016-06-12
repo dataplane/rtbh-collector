@@ -1,3 +1,8 @@
+sudo su - postgres
+psql
+# CREATE USER hack;
+# CREATE DATABASE hackathon OWNER hack;
+
 CREATE SEQUENCE blackhole_seq;
 CREATE TABLE blackhole (
     row_id BIGINT DEFAULT nextval('blackhole_seq') UNIQUE NOT NULL PRIMARY KEY,
