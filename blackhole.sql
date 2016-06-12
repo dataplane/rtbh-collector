@@ -5,6 +5,6 @@ CREATE TABLE blackhole (
     route INET NOT NULL,
     origin BIGINT NOT NULL,
     first_seen TIMESTAMP WITHOUT TIME ZONE DEFAULT date_trunc('seconds'::text, now()) NOT NULL,
-    last_seen TIMSTAMP WITHOUT TIME ZONE DEFAULT date_trunct('seconds'::text, now()) NOT NULL
+    last_seen TIMESTAMP WITHOUT TIME ZONE DEFAULT date_trunct('seconds'::text, now()) NOT NULL
 );
 CREATE INDEX route_index ON blackhole (route);
