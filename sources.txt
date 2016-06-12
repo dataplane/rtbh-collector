@@ -41,5 +41,19 @@ Qwest 	209:2
 Sprint 	1239:66
 Verizon / MCI 	701:9999
 Comcast 7922:666 
+i3d.net 49544:666
+XO 2828:1650
+Zayo 6461:5990
+Hibernia 
+ 5580:663 - 100 km radius
+ 5580:664 - outside country
+ 5580:661 - outside region
+ 5580:660 - outside continent  
+ 5580:662 - 2500 km radius
+ 5580:665 - outside metro
+ 5580:666 - discard anywhere
+Verizon 701:9999
+C&W 1273:666
+
 
 
