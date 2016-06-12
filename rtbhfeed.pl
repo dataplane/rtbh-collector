@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 # $Id: $
-# RTBH feed report generator
+# RTB feed report generator
 
 use DBD::Pg;
 use English;
@@ -24,11 +24,11 @@ print_header();
 
 for my $row (@$blackhole_ref) {
     printf "%-11s  |  %-30s  |  %18s  |  %19s  |  %s\n",
-        @$row[0],
-        @$row[1],
-        @$row[2],
-        @$row[3],
-        @$row[4],
+        $row->{origin},
+        $row->{origin_name},
+        $row->{route},
+        $row->{stamp},
+        $row->{data_source},
         ;
 }
 
@@ -38,7 +38,7 @@ sub get_recent_routes{
     my @routes;
 
     my $dbh = db_connect();
-    my $sql = 'SELECT data_source,route,origin,MAX(stamp) FROM blackhole WHERE stamp >= ?'
+    my $sql = 'SELECT data_source,route,origin,MAX(stamp) AS stamp FROM blackhole WHERE stamp >= ?'
             . ' GROUP BY data_source,route,origin';
 
     my $sth = $dbh->prepare($sql) or die 'db preparation error: ' . DBI->errstr;
@@ -69,30 +69,7 @@ sub print_header {
     return;
 }
 
-sub origin_asn {
-    my $addr  = shift;
-    my $res   = Net::DNS::Resolver->new;
-    my $qname = get_ptr_cymru_whois($addr);
-    my $query = $res->send( $qname, 'TXT' );
-    my @asns;
-    my %asn_cache;    # origin ASN can route multiple covering prefixes
-
-    # NOTE: set to zero and change to 'NA' after any numeric operations
-    return 0 if !$query;
-    return 0 if $query->header->ancount < 1;
-
-    for my $answer ( $query->answer ) {
-        my ($asn) = $answer->rdatastr =~ m{ \A ["] (\d+) \s }xms;
-        if ( $asn && !$asn_cache{$asn} ) {
-            $asn_cache{$asn} = 1;
-            push @asns, $asn;
-        }
-    }
-
-    return @asns;
-}
-
-sub origin_asname {
+sub get_asname {
     my $asn   = 'AS' . shift;
     my $res   = Net::DNS::Resolver->new;
     my $qname = $asn . '.asn.cymru.com.';
