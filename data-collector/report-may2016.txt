@@ -1,0 +1,34 @@
+
+
+
+from May 2016 till now
+
+# select count(distinct route) bh_routes from blackhole;
+2190 prefixes for which blackholing was requested
+
+
+2134 routes and 244 origin ASNs from DEC-IX
+788 routes and 132 origin ASns from MSK-IX
+
+
+# select count(distinct origin) from blackhole;
+249  unique ASns requesting the prefix to be blackholed
+
+
+# 
+
+
+top 10
+
+ bh_routes | origin
+-----------+--------
+       410 |   9116	GOLDENLINES-ASN (IL)
+       144 |  41228	NNT-AS41228 (LT)
+       136 |   8551	BEZEQ-INTERNATIONAL-AS (IL)
+       122 |   1680	NV-ASN (IL)
+       104 |  25074	INETBONE-AS (DE)
+        65 | 196645	HOSTPRO-AS (UA)
+        59 |  29182	ISPSYSTEM-AS (LU)
+        46 |  50673	Serverius-as (NL
+        44 |  51167	CONTABO (DE)
+        42 |  49505	SELECTEL (RU)
