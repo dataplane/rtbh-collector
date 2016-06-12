@@ -15,8 +15,7 @@ class BlackHoleDb(object):
 
     def _connect(self):
         # create a connection to the database
-        #self.__conn = psycopg2.connect("dbname=hackathon user=hack")
-        self.__conn = psycopg2.connect("dbname=chiara user=chiara")
+        self.__conn = psycopg2.connect("dbname=hackathon user=hack")
 
     def __init__(self):
         """ Connect to the database

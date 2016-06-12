@@ -29,10 +29,12 @@ communities = {
 
 def contains_rtbh_community(comm_attr):
     global communities
+
     for c in comm_attr:
         for data_source in communities:
-            if int(c["asn"]) in communities[data_source]:
-                if int(c["value"]) in communities[data_source][int(c["asn"])]:
+            if c["asn"] in communities[data_source]:
+                if c["value"] in communities[data_source][c["asn"]]:
+                    print "found"
                     # blackholing community found
                     return data_source
     return None
@@ -49,6 +51,7 @@ stream = BGPStream()
 rec = BGPRecord()
 
 # Consider multi hop collectors
+stream.add_filter('collector','rrc00')
 stream.add_filter('collector','rrc00')
 stream.add_filter('collector','route-views2')
 

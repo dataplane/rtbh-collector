@@ -52,6 +52,7 @@ while(stream.get_next_record(rec)):
                         # get the origin AS
                         origin_as = ases[-1]
                         bh_db.insert_data(data_source, elem.fields["prefix"], origin_as, elem.time)
+                        print data_source, elem.fields["prefix"], origin_as, elem.time
                     else:
                         # weird!
                         continue
