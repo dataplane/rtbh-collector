@@ -29,3 +29,17 @@ KPN AS 286
   https://as286.net/
   telnet route-server.eurorings.net # id: rs pw: loveAS286
     show route community 286:66
+    
+    
+BGP Community Values for RTBH:
+AT&T 7018:86
+GTT / TiNet 	3257:2666
+Hurricane Electric 	6939:666
+Level3 	3356:9999
+MTS Allstream 	15290:9999
+Qwest 	209:2
+Sprint 	1239:66
+Verizon / MCI 	701:9999
+
+
+
